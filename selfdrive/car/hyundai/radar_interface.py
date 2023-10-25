@@ -11,7 +11,7 @@ RADAR_MSG_COUNT = 32
 
 def get_radar_can_parser(CP):
 
-  if is_radar_disabler(CP):
+  if CP.carFingerprint in CANFD_CAR or is_radar_disabler(CP):
 
     if DBC[CP.carFingerprint]['radar'] is None:
       return None
