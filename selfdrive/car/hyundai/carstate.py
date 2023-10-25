@@ -330,12 +330,12 @@ class CarState(CarStateBase):
     # ------------------------------------------------------------------------
     # custom messages
 
-    prev_lfa_btn = self.lfa_btn
-    self.lfa_btn = cp.vl[self.cruise_btns_msg_canfd]["LKAS_BTN"]
-    if prev_lfa_btn != 1 and self.lfa_btn == 1:
-      self.lfa_enabled = not self.lfa_enabled
+    #prev_lfa_btn = self.lfa_btn
+    #self.lfa_btn = cp.vl[self.cruise_btns_msg_canfd]["LKAS_BTN"]
+    #if prev_lfa_btn != 1 and self.lfa_btn == 1:
+      #self.lfa_enabled = not self.lfa_enabled
 
-    ret.cruiseState.available = self.lfa_enabled
+    #ret.cruiseState.available = self.lfa_enabled
 
     # TODO BrakeLights, TPMS, AutoHold
     ret.brakeLights = ret.brakePressed
