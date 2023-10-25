@@ -28,7 +28,7 @@ from openpilot.selfdrive.controls.lib.events import Events, ET
 from openpilot.selfdrive.controls.lib.alertmanager import AlertManager, set_offroad_alert
 from openpilot.selfdrive.controls.lib.vehicle_model import VehicleModel
 from openpilot.system.hardware import HARDWARE
-
+from selfdrive.controls.lib.radar_helpers import RADAR_TO_CAMERA
 from openpilot.selfdrive.controls.neokii.cruise_state_manager import CruiseStateManager
 from openpilot.selfdrive.controls.ntune import ntune_common_enabled, ntune_common_get
 from openpilot.selfdrive.controls.neokii.speed_controller import SpeedController
