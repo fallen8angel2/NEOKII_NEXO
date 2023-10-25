@@ -258,6 +258,10 @@ class CarInterface(CarInterfaceBase):
       ret.mass = 2200.
       ret.wheelbase = 3.15
       ret.steerRatio = 12.069
+    elif candidate == CAR.GENESIS_GV60_EV_1ST_GEN:
+      ret.mass = 2205 + STD_CARGO_KG
+      ret.wheelbase = 2.9
+      ret.steerRatio = 12.6 # https://www.motor1.com/reviews/586376/2023-genesis-gv60-first-drive/#:~:text=Relative%20to%20the%20related%20Ioniq,5%2FEV6%27s%2014.3%3A1.        
     elif candidate == CAR.GENESIS_GV80:
       ret.mass = 2258.
       ret.wheelbase = 2.95
