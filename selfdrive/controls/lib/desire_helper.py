@@ -1,12 +1,12 @@
 from cereal import log
 from openpilot.common.conversions import Conversions as CV
 from openpilot.common.realtime import DT_MDL
-
+AutoLaneChangeEnabled = True
 LaneChangeState = log.LateralPlan.LaneChangeState
 LaneChangeDirection = log.LateralPlan.LaneChangeDirection
 
-LANE_CHANGE_SPEED_MIN = 20 * CV.MPH_TO_MS
-LANE_CHANGE_TIME_MAX = 10.
+LANE_CHANGE_SPEED_MIN = 20 * CV.KPH_TO_MS
+LANE_CHANGE_TIME_MAX = 5.
 
 DESIRES = {
   LaneChangeDirection.none: {
