@@ -2194,6 +2194,21 @@ FW_VERSIONS = {
       b'\xf1\x00JK1_ SCC FHCUP      1.00 1.00 99110-AR300         ',
     ],
   },
+  CAR.NEXO: {
+    (Ecu.fwdCamera, 0x7c4, None): [
+      b'\xf1\x00FE  MFC  AT KOR LHD 1.00 1.04 99211-M5000 180918',
+    ],
+    (Ecu.fwdRadar, 0x7d0, None): [
+      b'\xf1\x00FE__ SCC FHCUP      1.00 1.03 99110-M5000         ',
+      b'\xf1\x00FE__ SCC FHCUP      1.00 1.04 99110-M5000         ',
+    ],
+    (Ecu.abs, 0x7c1, None): [
+      b'\xf1\x00FE IEB \x01 312 \x11\x13 58520-M5000',
+    ],
+    (Ecu.eps, 0x7d4, None): [
+      b'\xf1\x00FE  MDPS C 1.00 1.05 56340-M5000 9903',
+    ],
+  },
   CAR.GENESIS_GV60_EV_1ST_GEN: {
     (Ecu.fwdCamera, 0x7c4, None): [
       b'\xf1\x00JW1 MFC  AT USA LHD 1.00 1.02 99211-CU100 211215',
