@@ -8,7 +8,7 @@ from openpilot.selfdrive.car.hyundai.values import HyundaiFlags, CAR, DBC, CANFD
                                                             EV_CAR, \
   HYBRID_CAR, LEGACY_SAFETY_MODE_CAR, Buttons, CarControllerParams, CANFD_HDA2_CAR, CANFD_HDA2_ALT_GEARS
 from openpilot.selfdrive.car.hyundai.radar_interface import RADAR_START_ADDR
-from openpilot.selfdrive.car import create_button_events, get_safety_config
+from openpilot.selfdrive.car import STD_CARGO_KG, create_button_event, scale_rot_inertia, scale_tire_stiffness, gen_empty_fingerprint, get_safety_config
 from openpilot.selfdrive.car.interfaces import CarInterfaceBase
 from openpilot.selfdrive.car.disable_ecu import disable_ecu
 from openpilot.selfdrive.controls.neokii.cruise_state_manager import is_radar_point
