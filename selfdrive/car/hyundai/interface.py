@@ -237,11 +237,6 @@ class CarInterface(CarInterfaceBase):
       ret.steerRatio = 13.27  # guesstimate from K5 platform
 
     # Genesis
-    elif candidate == CAR.GENESIS_GV60_EV_1ST_GEN:
-      ret.mass = 2205
-      ret.wheelbase = 2.9
-      # https://www.motor1.com/reviews/586376/2023-genesis-gv60-first-drive/#:~:text=Relative%20to%20the%20related%20Ioniq,5%2FEV6%27s%2014.3%3A1.
-      ret.steerRatio = 12.6
     elif candidate == CAR.GENESIS_G70:
       ret.steerActuatorDelay = 0.1
       ret.mass = 1640.0
