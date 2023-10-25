@@ -123,21 +123,22 @@ def create_lfahda_mfc(packer, enabled, hda_set_speed=0):
   }
   return packer.make_can_msg("LFAHDA_MFC", 0, values)
 
-def create_acc_commands(packer, enabled, accel, upper_jerk, idx, lead_visible, set_speed, stopping, long_override, use_fca, CS, stock_cam):
+def create_acc_commands(packer, enabled, accel, upper_jerk, idx, lead_visible, set_speed, stopping, long_override, use_fca, CS, stock_cam,vision_dist,RelSpd):
   commands = []
 
   cruise_enabled = enabled and CS.out.cruiseState.enabled
-
+  objGap = 0 if vision_dist == 0 else 2 if vision_dist < 25 else 3 if vision_dist < 40 else 4 if vision_dist < 70 else 5
+  
   scc11_values = {
     "MainMode_ACC": CS.out.cruiseState.available,
     "TauGapSet": CS.out.cruiseState.gapAdjust,
     "VSetDis": set_speed if cruise_enabled else 0,
     "AliveCounterACC": idx % 0x10,
-    "ObjValid": 1, # close lead makes controls tighter
-    "ACC_ObjStatus": 1, # close lead makes controls tighter
+    "ObjValid": 1 if lead_visible else 0, # close lead makes controls tighter
+    "ACC_ObjStatus": 1 if lead_visible else 0, # close lead makes controls tighter
     "ACC_ObjLatPos": 0,
-    "ACC_ObjRelSpd": 0,
-    "ACC_ObjDist": 1, # close lead makes controls tighter
+    "ACC_ObjRelSpd": RelSpd, # 현재 속도..? 
+    "ACC_ObjDist": vision_dist, # close lead makes controls tighter
     }
 
   if not stock_cam:
