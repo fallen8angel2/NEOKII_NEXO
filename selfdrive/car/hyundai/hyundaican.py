@@ -173,7 +173,7 @@ def create_acc_commands(packer, enabled, accel, upper_jerk, idx, lead_visible, s
     "JerkUpperLimit": upper_jerk, # stock usually is 1.0 but sometimes uses higher values
     "JerkLowerLimit": 5.0, # stock usually is 0.5 but sometimes uses higher values
     "ACCMode": 2 if enabled and long_override else 1 if enabled else 4, # stock will always be 4 instead of 0 after first disengage
-    "ObjGap": 2 if lead_visible else 0, # 5: >30, m, 4: 25-30 m, 3: 20-25 m, 2: < 20 m, 0: no lead
+    "ObjGap": objGap,#2 if lead_visible else 0, # 5: >30, m, 4: 25-30 m, 3: 20-25 m, 2: < 20 m, 0: no lead # 선행차와의 거리??
   }
   commands.append(packer.make_can_msg("SCC14", 0, scc14_values))
 
@@ -185,7 +185,7 @@ def create_acc_commands(packer, enabled, accel, upper_jerk, idx, lead_visible, s
       "CR_FCA_Alive": idx % 0xF,
       "PAINT1_Status": 1,
       "FCA_DrvSetStatus": 1,
-      "FCA_Status": 1,  # AEB disabled
+      "FCA_Status": 0,  # AEB disabled
     }
     fca11_dat = packer.make_can_msg("FCA11", 0, fca11_values)[2]
     fca11_values["CR_FCA_ChkSum"] = hyundai_checksum(fca11_dat[:7])
@@ -206,7 +206,7 @@ def create_acc_opt(packer):
   # TODO: this needs to be detected and conditionally sent on unsupported long cars
   fca12_values = {
     "FCA_DrvSetState": 2,
-    "FCA_USM": 1, # AEB disabled
+    "FCA_USM": 0, # AEB disabled
   }
   commands.append(packer.make_can_msg("FCA12", 0, fca12_values))
 
