@@ -152,7 +152,12 @@ class CarInterface(CarInterfaceBase):
       ret.mass = 1870.  # weight from Limited trim - the only supported trim
       ret.wheelbase = 3.000
       # steering ratio according to Hyundai News https://www.hyundainews.com/assets/documents/original/48035-2022SantaCruzProductGuideSpecsv2081521.pdf
-      ret.steerRatio = 14.2
+      ret.steerRatio = 14.2  # steering ratio according to Hyundai News https://www.hyundainews.com/assets/documents/original/48035-2022SantaCruzProductGuideSpecsv2081521.pdf  
+    elif candidate == CAR.NEXO: # fix PolorBear - 22.06.05
+      ret.mass = 1885. + STD_CARGO_KG
+      ret.wheelbase = 2.79
+      ret.steerRatio = 14.19  #https://www.hyundainews.com/en-us/models/hyundai-nexo-2019-nexo/specifications
+      tire_stiffness_factor = 0.385
     elif candidate == CAR.CUSTIN_1ST_GEN:
       ret.mass = 1690.  # from https://www.hyundai-motor.com.tw/clicktobuy/custin#spec_0
       ret.wheelbase = 3.055
