@@ -155,6 +155,21 @@ class CarState(CarStateBase):
     # as this seems to be standard over all cars, but is not the preferred method.
     if self.CP.carFingerprint in (HYBRID_CAR | EV_CAR):
       gear = cp.vl["ELECT_GEAR"]["Elect_Gear_Shifter"]
+      gear_shifter = GearShifter.unknown
+
+      if gear == 1546:  # Thank you for Neokii 
+        gear_shifter = GearShifter.drive
+      elif gear == 2314:
+        gear_shifter = GearShifter.neutral
+      elif gear == 2569:
+        gear_shifter = GearShifter.park
+      elif gear == 2566:
+        gear_shifter = GearShifter.reverse
+
+      if gear_shifter != GearShifter.unknown and self.gear_shifter != gear_shifter:
+        self.gear_shifter = gear_shifter
+
+      ret.gearShifter = self.gear_shifter      
     elif self.CP.carFingerprint in CAN_GEARS["use_cluster_gears"]:
       gear = cp.vl["CLU15"]["CF_Clu_Gear"]
     elif self.CP.carFingerprint in CAN_GEARS["use_tcu_gears"]:
