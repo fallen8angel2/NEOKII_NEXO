@@ -2385,6 +2385,7 @@ DBC = {
   CAR.SONATA_HYBRID: dbc_dict('hyundai_kia_generic', 'hyundai_kia_mando_front_radar_generated'),
   CAR.TUCSON_4TH_GEN: dbc_dict('hyundai_canfd', None),
   CAR.TUCSON_HYBRID_4TH_GEN: dbc_dict('hyundai_canfd', None),
+  CAR.TUCSON_4TH_GEN: dbc_dict('hyundai_canfd', None),
   CAR.IONIQ_5: dbc_dict('hyundai_canfd', None),
   CAR.IONIQ_6: dbc_dict('hyundai_canfd', None),
   CAR.SANTA_CRUZ_1ST_GEN: dbc_dict('hyundai_canfd', None),
