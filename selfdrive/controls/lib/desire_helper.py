@@ -5,7 +5,7 @@ AutoLaneChangeEnabled = True
 LaneChangeState = log.LateralPlan.LaneChangeState
 LaneChangeDirection = log.LateralPlan.LaneChangeDirection
 
-LANE_CHANGE_SPEED_MIN = 20 * CV.KPH_TO_MS
+LANE_CHANGE_SPEED_MIN = 5 * CV.KPH_TO_MS
 LANE_CHANGE_TIME_MAX = 5.
 
 DESIRES = {
